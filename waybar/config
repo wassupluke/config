@@ -1,0 +1,114 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 15,
+    "modules-left": ["custom/powermenu", "custom/updates", "sway/mode", "sway/workspaces", "sway/window", "custom/music"],
+    "modules-center": ["cpu", "temperature", "memory", "disk"],
+    "modules-right": ["custom/alsa", "backlight", "network", "battery", "tray", "idle_inhibitor", "clock"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": "i "
+        }
+    },
+
+    "custom/updates": {
+        "format": "📥   ",
+        "on-click": "alacritty --class updater -T updater -e ~/.config/my-scripts/updates.sh"
+    },
+
+    "sway/mode": {
+        "format": "{}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 7
+    },
+
+    "clock": {
+        // Human Friendly
+        "format": "{:%A, %B %d at %I:%M %p}",
+        // 24hr Robot Friendly
+        "format-alt": "{:%Y-%m-%d - %H:%M}"
+    },
+    "cpu": {
+        "format": "🧠{usage}%",
+        "on-click": "alacritty -t 'Floating Terminal' -e btop",
+        "tooltip": false
+    },
+    "temperature": {
+        "critical-threshold": 60,
+        "format": "🌡️{temperatureC}°C",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 30,
+        "format": "󰘚 {used}G"
+    },
+
+    "battery": {
+        "states": {
+            "good": 79,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "🔋{capacity}% {time}",
+        "format-critical": "🪫{capacity}%",
+        "format-plugged": "🔌{capacity}%",
+        "format-charging": "🔌{capacity}%"
+    },
+    "disk": {
+        "format": "📁{free}",
+        "path": "/home/",
+        "on-click": "dolphin"
+    },
+
+    "network": {
+        "format-wifi": "🛜{essid}:{signalStrength}%",
+        "format-ethernet": "{ifname}",
+        "format-disconnected": "Disconnected",
+        "on-click": "alacritty -e 'nmtui'"
+    },
+
+    "custom/music": {
+        "format": "{}",
+        "max-length": 20,
+        "interval": 5,
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+        "tooltip": false,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
+    },
+
+    "custom/powermenu": {
+        "format": " ",
+        "on-click": "exec ~/.config/my-scripts/powermenu.sh"
+    },
+
+    "custom/alsa": {
+        "exec": "~/.config/my-scripts/alsa.sh",
+        "on-click": "amixer set Master toggle",
+        "on-scroll-down": "amixer set Master 2%-",
+        "on-scroll-up": "amixer set Master 2%+",
+        "signal": 11,
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "backlight": {
+        "format": " {icon}{percent}% ",
+        "format-icons": ["🌙", "🔅", "🔆", "☀️", "🌞"],
+        "on-click": "bash ~/.config/my-scripts/nightlighttoggle.sh",
+        "tooltip-format": "click to toggle night-mode"
+    },
+   }
+}
