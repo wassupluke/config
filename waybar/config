@@ -15,12 +15,12 @@
         "format": "{icon}",
         "format-icons": {
             "activated": " ",
-            "deactivated": "i "
+            "deactivated": " "
         }
     },
 
     "custom/updates": {
-        "format": "📥   ",
+        "format": "📥 ",
         "on-click": "alacritty --class updater -T updater -e ~/.config/my-scripts/updates.sh"
     },
 
