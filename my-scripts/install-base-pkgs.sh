@@ -23,6 +23,7 @@ done \
 && rm ~/.bashrc ~/.bash_profile \
 ; ln ~/.config/.bashrc ~/.bashrc \
 && ln ~/.config/.bash_profile ~/.bash_profile \
+&& source ~/.config/.shoptions \
 \
 \
 && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \

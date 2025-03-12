@@ -64,3 +64,5 @@ shopt -s checkwinsize
 
 # Created by `pipx` on 2024-10-14 03:56:02
 export PATH="$PATH:$HOME/.local/bin"
+
+source /home/wassu/.config/my-scripts/bash_completion.sh
