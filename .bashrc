@@ -52,7 +52,7 @@ alias gs='git fetch && git status'
 alias ga='git add'
 alias gc='git commit -m '
 alias gl="git log --all --decorate --oneline --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
-alias vim='nvim'
+alias vim='~/.config/nvim-linux-x86_64.appimage'
 alias python=python3
 alias pylint="pylint --rcfile=~/.config/.pylintrc"
 
